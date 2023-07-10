@@ -1,5 +1,5 @@
 library(readr)
-iris <- read_csv("/Users/pgmenon/Documents/CMU/PGSS2023/CMU_PGSS2023_CSLab/Week01/iris.csv", 
+iris <- read_csv("C:/Users/darry/Desktop/Work/PGSS Lab/CMU-PGSS-2023-Lab/Week1/iris.csv", 
                  col_names = FALSE, col_types = cols(X1 = col_double()))
 colnames(iris) <- c("Petal.Length", "Petal.Width", "Sepal.Length", "Sepal.Width", "Species")
 # View(iris)
@@ -14,8 +14,7 @@ print(sapply(iris, class))
 print(table(iris$Species))
 
 # Generate ggplot diagram to visualize a boxplot of Sepal.Width by Species and write this plot out to an image 
-# install.packages("ggplot2"); install.packages("cowplot")
+#install.packages("ggplot2"); install.packages("cowplot")
 library(ggplot2)
-library(cowplot)
-p1 <- ggplot(iris) + geom_boxplot(aes(x=Species, y=Sepal.Width, color=Species), outlier.alpha = 0.1) + theme_minimal()
-save_plot("/Users/pgmenon/Documents/CMU/PGSS2023/CMU_PGSS2023_CSLab/Week01/iris.png", p1, base_height=4, base_width=4, limitsize=FALSE)
+p1 <- ggplot(data=iris, aes(x=Species, y=Sepal.Width, color=Species)) + geom_boxplot(outlier.alpha = 0.1) + theme_minimal()
+ggsave("C:/Users/darry/Desktop/Work/PGSS Lab/iris.png", p1, height=4, width=4, limitsize=FALSE)
