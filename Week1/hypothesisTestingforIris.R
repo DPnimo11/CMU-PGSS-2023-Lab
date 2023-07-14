@@ -9,7 +9,7 @@ library(rpart.plot)
 library(caret)
 
 # Read the iris data from a CSV file
-iris_df <- read_csv("/cloud/project/PGSS 2023 Week 1/iris.csv", col_names = c("Petal.Length", "Petal.Width", "Sepal.Length", "Sepal.Width", "Species"))
+iris_df <- read_csv("iris.csv", col_names = c("Petal.Length", "Petal.Width", "Sepal.Length", "Sepal.Width", "Species"))
 
 # Display the first few rows of the DataFrame
 head(iris_df)
